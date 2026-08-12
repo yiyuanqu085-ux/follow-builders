@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-08-12T02:01:00.235Z",
+  "signalCount": 10,
+  "stats": {
+    "byStatus": {
+      "trending": 10
+    }
+  },
+  "signals": [
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+      "summary": "https://stolen-thoughts.com/",
+      "url": "https://stolen-thoughts.com/",
+      "publishedAt": "2026-08-11T13:22:00.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "Apple Silicon and macOS VMs: Faster LLM Inference with llama.cpp",
+      "summary": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md",
+      "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md",
+      "publishedAt": "2026-08-11T14:50:33.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
+        "Models",
+        "Developer Ecosystem",
+        "Startup",
+        "Competitors"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "OpenAI’s head of ethics leaves less than a year after joining",
+      "summary": "https://www.ft.com/content/e49dfb75-f841-4466-a577-f7aaff8779a0",
+      "url": "https://www.ft.com/content/e49dfb75-f841-4466-a577-f7aaff8779a0",
+      "publishedAt": "2026-08-11T12:23:07.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
+        "Competitors"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "Go is an ideal language for AI-assisted software engineering",
+      "summary": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
+      "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
+      "publishedAt": "2026-08-11T16:57:09.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
+        "Coding / Agents",
+        "Competitors"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "Compression is prediction",
+      "summary": "https://ngrok.com/blog/compression-is-prediction",
+      "url": "https://ngrok.com/blog/compression-is-prediction",
+      "publishedAt": "2026-08-11T19:49:44.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": []
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "sponsors/vitali87",
+      "summary": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
+      "url": "https://github.com/sponsors/vitali87",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "apps/github-actions",
+      "summary": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
+      "url": "https://github.com/apps/github-actions",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "anthropics/skills",
+      "summary": "Public repository for Agent Skills. Contribute to anthropics/skills development by creating an account on GitHub.",
+      "url": "https://github.com/anthropics/skills",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Developer Ecosystem",
+        "Competitors"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "3b1b/manim",
+      "summary": "Animation engine for explanatory math videos. Contribute to 3b1b/manim development by creating an account on GitHub.",
+      "url": "https://github.com/3b1b/manim",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "stablyai/orca",
+      "summary": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS. - stablyai/orca",
+      "url": "https://github.com/stablyai/orca",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Coding / Agents",
+        "Developer Ecosystem"
+      ]
+    }
+  ],
+  "errors": [
+    "arxiv:Thom_Wolf: HTTP 429",
+    "arxiv:fchollet: HTTP 429",
+    "arxiv:DrJimFan: HTTP 429",
+    "trending:arxiv: HTTP 429"
+  ]
+}

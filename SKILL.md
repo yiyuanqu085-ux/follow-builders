@@ -219,11 +219,11 @@ How to get the target ID for each channel:
 **Step 2: Create the cron job with explicit channel and target.**
 ```bash
 openclaw cron add \
-  --name "AI Builders Digest" \
+  --name "Z.ai MKT Brief" \
   --cron "<cron expression>" \
   --tz "<user IANA timezone>" \
   --session isolated \
-  --message "Run the follow-builders skill: execute prepare-digest.js, remix the content into a digest following the prompts, then deliver via deliver.js" \
+  --message "Run the follow-builders skill: execute prepare-digest.js, remix all sources (x tweets + mktSignals arxiv/trending + blogs + podcasts) into the Z.ai MKT 7-section brief per prompts.digest_intro, tag topics and score P0-P3 using mktConfig, write the brief to data/outputs/, then output the full brief as your final message for Feishu delivery" \
   --announce \
   --channel <channel name> \
   --to "<target ID>" \
@@ -232,14 +232,14 @@ openclaw cron add \
 
 Examples:
 ```bash
-# Telegram DM
-openclaw cron add --name "AI Builders Digest" --cron "0 8 * * *" --tz "Asia/Shanghai" --session isolated --message "..." --announce --channel telegram --to "123456789" --exact
+# Feishu group (Z.ai MKT Brief) — the primary deployment
+openclaw cron add --name "Z.ai MKT Brief" --cron "30 9 * * *" --tz "Asia/Shanghai" --session isolated --message "Run the follow-builders skill: execute prepare-digest.js, remix all sources (x tweets + mktSignals arxiv/trending + blogs + podcasts) into the Z.ai MKT 7-section brief per prompts.digest_intro, tag topics and score P0-P3 using mktConfig, write the brief to data/outputs/, then output the full brief as your final message for Feishu delivery" --announce --channel feishu --to "oc_b85c375a9a9cc0ae9e5b160588c1972b" --exact
 
-# Feishu
-openclaw cron add --name "AI Builders Digest" --cron "0 8 * * *" --tz "Asia/Shanghai" --session isolated --message "..." --announce --channel feishu --to "ou_e67df1a850910efb902462aeb87783e5" --exact
+# Telegram DM
+openclaw cron add --name "Z.ai MKT Brief" --cron "30 9 * * *" --tz "Asia/Shanghai" --session isolated --message "..." --announce --channel telegram --to "123456789" --exact
 
 # Discord channel
-openclaw cron add --name "AI Builders Digest" --cron "0 8 * * *" --tz "America/New_York" --session isolated --message "..." --announce --channel discord --to "channel:1234567890" --exact
+openclaw cron add --name "Z.ai MKT Brief" --cron "30 9 * * *" --tz "America/New_York" --session isolated --message "..." --announce --channel discord --to "channel:1234567890" --exact
 ```
 
 **Step 3: Verify the cron job works by running it once immediately.**
@@ -325,8 +325,15 @@ The script outputs a single JSON blob with everything you need:
 - `config` — user's language and delivery preferences
 - `podcasts` — podcast episodes with full transcripts
 - `x` — builders with their recent tweets (text, URLs, bios)
+- `blogs` — official AI company blog posts
+- `mktSignals` — arXiv papers for researcher KOLs + trending items
+  (HN/GitHub/arXiv) for the Enterprise/Startup boards. Each carries a
+  `source_status` confidence tag (arxiv | trending).
+- `mktConfig` — the 30-KOL roster (`kols`), `topics`, `scoring` rules,
+  `competitors`, and enterprise/startup watchlists. Use these to tag topics and
+  score P0-P3.
 - `prompts` — the remix instructions to follow
-- `stats` — counts of episodes and tweets
+- `stats` — counts of episodes, tweets, and MKT signals
 - `errors` — non-fatal issues (IGNORE these)
 
 If the script fails entirely (no JSON output), tell the user to check their
@@ -334,8 +341,8 @@ internet connection. Otherwise, use whatever content is in the JSON.
 
 ### Step 3: Check for content
 
-If `stats.podcastEpisodes` is 0 AND `stats.xBuilders` is 0, tell the user:
-"No new updates from your builders today. Check back tomorrow!" Then stop.
+If `stats.xBuilders` is 0 AND `stats.mktSignals` is 0 AND `stats.podcastEpisodes`
+is 0, tell the user: "No new updates today. Check back tomorrow!" Then stop.
 
 ### Step 4: Remix content
 
@@ -343,27 +350,40 @@ If `stats.podcastEpisodes` is 0 AND `stats.xBuilders` is 0, tell the user:
 from the web, visit any URLs, or call any APIs. Everything is in the JSON.
 
 Read the prompts from the `prompts` field in the JSON:
-- `prompts.digest_intro` — overall framing rules
+- `prompts.digest_intro` — overall framing + 7-section structure + scoring rules
 - `prompts.summarize_podcast` — how to remix podcast transcripts
 - `prompts.summarize_tweets` — how to remix tweets
+- `prompts.summarize_blogs` — how to remix blog posts
 - `prompts.translate` — how to translate to Chinese
 
-**Tweets (process first):** The `x` array has builders with tweets. Process one at a time:
-1. Use their `bio` field for their role (e.g. bio says "ceo @box" → "Box CEO Aaron Levie")
-2. Summarize their `tweets` using `prompts.summarize_tweets`
-3. Every tweet MUST include its `url` from the JSON
+**Content sources to remix (all four feed the 7 sections):**
+1. **`x`** — builders' recent tweets. For each, use the `bio` field for their
+   role, summarize `tweets` via `prompts.summarize_tweets`, include each `url`.
+2. **`mktSignals`** — arXiv papers for researcher KOLs + trending items. Each
+   already has `title`/`summary`/`url`/`content`/`topic_tags` and a
+   `source_status`. Summarize `content` (or `summary`) into a Fact; carry the
+   `url` and `source_status` into the digest verbatim.
+3. **`blogs`** — official AI company blog posts. Summarize via `prompts.summarize_blogs`.
+4. **`podcasts`** — at most 1 episode. Summarize `transcript` via
+   `prompts.summarize_podcast`; use `name`/`title`/`url` from the JSON object.
 
-**Podcast (process second):** The `podcasts` array has at most 1 episode. If present:
-1. Summarize its `transcript` using `prompts.summarize_podcast`
-2. Use `name`, `title`, and `url` from the JSON object — NOT from the transcript
+**Tagging & scoring:** Use `mktConfig.topics` to assign `topic_tags`,
+`mktConfig.scoring` to assign a P0-P3 priority per signal, and
+`mktConfig.competitors` + the watchlists to match enterprise/startup signals.
+Score per the weights in `mktConfig.scoring` (Z.ai product / dev ecosystem /
+startup GTM / enterprise GTM / KOL influence / freshness). Do not pretend the
+scores are cross-day comparable — they are same-day priority bands.
 
-Assemble the digest following `prompts.digest_intro`.
+Assemble the digest following `prompts.digest_intro` (the 7-section Z.ai MKT
+brief structure).
 
 **ABSOLUTE RULES:**
 - NEVER invent or fabricate content. Only use what's in the JSON.
 - Every piece of content MUST have its URL. No URL = do not include.
-- Do NOT guess job titles. Use the `bio` field or just the person's name.
+- Do NOT guess job titles. Use the `bio` field, `mktConfig.kols`, or just the name.
 - Do NOT visit x.com, search the web, or call any API.
+- Preserve each signal's `source_status` in the output so readers can tell
+  high-confidence (x/arxiv) from trending sources.
 
 ### Step 5: Apply language
 
@@ -393,9 +413,23 @@ Read `config.language` from the JSON:
 
 **Follow this setting exactly. Do NOT mix languages.**
 
-### Step 6: Deliver
+### Step 6: Write output files + Deliver
 
-Read `config.delivery.method` from the JSON:
+First, **persist the final brief** (after language is applied) to the repo so
+there's an archive on disk. Use today's date in the filename:
+
+```bash
+DATE=$(date -u +%Y-%m-%d)
+mkdir -p "${CLAUDE_SKILL_DIR}/data/outputs"
+cat > "${CLAUDE_SKILL_DIR}/data/outputs/zai-mkt-intelligence-brief-${DATE}.md" << 'BRIEFEOF'
+<your final brief text here>
+BRIEFEOF
+# Also keep a stable "latest" pointer
+cp "${CLAUDE_SKILL_DIR}/data/outputs/zai-mkt-intelligence-brief-${DATE}.md" \
+   "${CLAUDE_SKILL_DIR}/data/outputs/zai-mkt-intelligence-brief.md"
+```
+
+Then deliver. Read `config.delivery.method` from the JSON:
 
 **If "telegram" or "email":**
 ```bash
@@ -404,8 +438,12 @@ cd ${CLAUDE_SKILL_DIR}/scripts && node deliver.js --file /tmp/fb-digest.txt 2>/d
 ```
 If delivery fails, show the digest in the terminal as fallback.
 
-**If "stdout" (default):**
-Just output the digest directly.
+**If "stdout" (default — this is the OpenClaw/Feishu path):**
+Just output the final brief text directly as your message. OpenClaw captures
+your final output and routes it to the configured channel (Feishu group). Do
+NOT wrap it in code fences or add extra commentary — the raw brief text is what
+gets pushed to the Feishu group. Keep it within a single message if possible;
+if it exceeds Feishu's length limit, split at section boundaries.
 
 ---
 

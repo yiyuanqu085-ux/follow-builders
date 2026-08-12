@@ -1,59 +1,102 @@
-# Digest Intro Prompt
+# Z.ai MKT Intelligence Brief — Remix Instructions
 
-You are assembling the final digest from individual source summaries.
+You are assembling the Z.ai MKT Daily Intelligence Brief from the JSON prepared
+by `prepare-digest.js`.
+Your output goes to a Feishu group — deliver the **full** brief, all 7 sections.
 
-## Format
+## Header
 
-Start with this header (replace [Date] with today's date):
+Start with:
 
-AI Builders Digest — [Date]
+```
+Z.ai MKT Intelligence Brief — [YYYY-MM-DD]
+```
 
-Then organize content in this order:
+Use today's date. Keep it on its own line.
 
-1. X / TWITTER section — list each builder with new posts
-2. OFFICIAL BLOGS section — list each blog post from AI company blogs (OpenAI, Anthropic, etc.)
-3. PODCASTS section — list each podcast with new episodes
+## The 7 sections (in this order)
+
+1. **Top AI Signals** (5-8 items) — the most important AI industry moves of the
+   day, regardless of source. Competitor model releases, big funding, major
+   product launches, landmark papers. Each item gets a priority tag (P0-P3).
+2. **KOL Radar** (5-12 items) — what the tracked KOLs said/shipped today, drawn
+   from `x` (tweets) and `mktSignals` (arXiv papers for researcher KOLs). Group
+   by KOL only when a KOL has multiple items; otherwise list flat.
+3. **KOL Outreach Opportunities** (3-5 items) — KOLs worth engaging THIS week
+   and why, grounded in today's specific content. If nothing qualifies, write
+   "本周暂无推荐接触动作" rather than padding.
+4. **Startup & Dev Ecosystem** (3-8 items) — new AI startups, fundraises,
+   dev-tool launches, open-source projects. Drawn from `mktSignals` trending
+   items + KOL signals. This section is lower-weight (fewer items is fine).
+5. **Enterprise AI Radar** (3-8 items) — enterprise adoption, private
+   deployment, governance, procurement signals. Match against
+   `mktConfig.enterpriseWatchlist.signals_of_interest`. Also lower-weight.
+6. **Podcasts / Long-form** (0-5 items) — from `podcasts` (and any long-form
+   `mktSignals`). Skip entirely if none today.
+7. **Watchlist** — three short sub-lists: **KOLs to add** (newly relevant
+   voices seen today), **KOLs to deprioritize** (consistently low-signal,
+   e.g. Tier C with nothing real), and **Topics to monitor** (emerging themes
+   worth tracking). Keep each sub-list to a few entries.
+
+Skip any section that genuinely has no content today — but say so in one line
+(e.g. "Podcasts: none today") rather than silently omitting, EXCEPT section 7
+which always appears.
+
+## Per-signal fields
+
+Every signal you include (sections 1-6) must have:
+
+- **Fact** — what actually happened/said, 1-2 sentences, drawn only from the
+  JSON. This is the non-negotiable factual core.
+- **Topic tags** — from `mktConfig.topics` (e.g. Models, Coding & Agents,
+  Competitors). Use the tags already in `topic_tags` when present.
+- **Interpretation / Why Z.ai** — **keep this LIGHT.** One sentence max. State
+  the relevance to Z.ai (GLM, coding agents, dev ecosystem, enterprise). Do NOT
+  write filler like "这与开发者生态相关" — if there's no concrete angle, write
+  "—" and move on.
+- **MKT opportunity** — a concrete action Z.ai marketing could take (engage the
+  KOL, comment on the news, draft a contrast post, brief sales). **You may only
+  recommend an action if you cite the specific Fact above.** If no fact supports
+  an action, write exactly: "不建议主动动作". Never invent an action.
+- **Priority** — P0 / P1 / P2 / P3 (see scoring below).
+- **Source** — the real URL from the JSON, plus the `source_status` tag in
+  parentheses (e.g. `(x)`, `(arxiv)`, `(trending)`). This lets readers judge
+  confidence at a glance.
+
+## Scoring (P0-P3)
+
+Use `mktConfig.scoring`. Compute a 0-100 score per signal from the weighted
+dimensions (zai_product 30 / dev_ecosystem 20 / startup_gtm 15 / enterprise_gtm
+15 / kol_influence 10 / freshness 10), apply topic-match bonuses, then map:
+
+- **P0** (≥80) — must-know: GLM-relevant model news, major competitor moves,
+  strong KOL signal. Always include.
+- **P1** (≥60) — MKT-relevant, worth following. Include.
+- **P2** (≥40) — interesting but low priority. Include sparingly.
+- **P3** (<40) — noise. Do NOT include.
+
+Source confidence (`mktConfig.scoring.source_confidence`) affects the
+kol_influence dimension: `x`/`arxiv` rank high; `trending` ranks lower — treat
+trending items as ambient signal, not KOL-confirmed. These are same-day priority
+bands, NOT cross-day comparable scores — don't claim otherwise.
 
 ## Rules
 
-- Only include sources that have new content
-- Skip any source with nothing new
-- Under each source, paste the individual summary you generated
-
-### Podcast links
-- After each podcast summary, include the specific video URL from the JSON `url` field
-  (e.g. https://youtube.com/watch?v=Iu4gEnZFQz8)
-- NEVER link to the channel page. Always link to the specific video.
-- Include the exact episode title from the JSON `title` field in the heading
-
-### Tweet author formatting
-- Use the author's full name and role/company, not just their last name
-  (e.g. "Box CEO Aaron Levie" not "Levie")
-- NEVER write Twitter handles with @ in the digest. On Telegram, @handle becomes
-  a clickable link to a Telegram user, which is wrong. Instead write handles
-  without @ (e.g. "Aaron Levie (levie on X)" or just use their full name)
-- Include the direct link to each tweet from the JSON `url` field
-
-### Blog post formatting
-- Use the blog name as a section header (e.g. "Anthropic Engineering", "OpenAI News", "Claude Blog")
-- Under each blog, list each new post with its title and summary
-- Include the author name if available
-- Include the direct link to the original article
+### No fabrication
+- Only include content from the JSON (`x`, `mktSignals`, `blogs`, `podcasts`).
+- NEVER make up quotes, opinions, or content someone might have said.
+- NEVER speculate about someone's silence or what they might be working on.
+- If a KOL has nothing real today, skip them. Do not pad with guesses.
 
 ### Mandatory links
-- Every single piece of content MUST have an original source link
-- Blog posts: the direct article URL (e.g. https://www.anthropic.com/engineering/...)
-- Podcasts: the YouTube video URL (e.g. https://youtube.com/watch?v=xxx)
-- Tweets: the direct tweet URL (e.g. https://x.com/levie/status/xxx)
-- If you don't have a link for something, do NOT include it in the digest.
-  No link = not real = do not include.
+- Every item MUST have its original source URL from the JSON.
+- No URL = not real = do not include. No exceptions.
+- Preserve the `source_status` tag next to each link.
 
-### No fabrication
-- Only include content that came from the feed JSON (blogs, podcasts, and tweets)
-- NEVER make up quotes, opinions, or content you think someone might have said
-- NEVER speculate about someone's silence or what they might be working on
-- If you have nothing real for a builder, skip them entirely
+### Tone & length
+- Scannable on a phone. Facts first, judgment light.
+- No marketing fluff, no "in today's rapidly evolving AI landscape" openers.
+- English by default; follow `config.language` for zh/bilingual (Step 5).
 
-### General
-- At the very end, add a line: "Generated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders"
-- Keep formatting clean and scannable — this will be read on a phone screen
+### Closing
+End with: `Generated through the Z.ai MKT Intelligence Brief skill.`

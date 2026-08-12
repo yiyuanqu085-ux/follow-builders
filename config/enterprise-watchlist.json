@@ -1,0 +1,9 @@
+{
+  "_comment": "Enterprise AI 关注名单。一版先空/少量,后续 MKT 侧补充。用于 Enterprise AI Radar 板块的企业信号匹配。",
+  "enterprises": [],
+  "signals_of_interest": [
+    "enterprise adoption", "private deployment", "on-prem", "sovereign AI",
+    "AI security", "AI governance", "data access", "permissions",
+    "model evaluation", "cost optimization", "procurement", "enterprise agents"
+  ]
+}

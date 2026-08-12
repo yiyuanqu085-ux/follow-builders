@@ -1,0 +1,15 @@
+{
+  "_comment": "竞品清单 + 监控关键词。用于信号匹配和企业/startup 板块填充。",
+  "competitors": [
+    { "name": "OpenAI", "aliases": ["OpenAI", "GPT", "ChatGPT", "Sam Altman"], "category": "frontier_lab" },
+    { "name": "Anthropic", "aliases": ["Anthropic", "Claude", "Dario Amodei"], "category": "frontier_lab" },
+    { "name": "Google", "aliases": ["Google", "DeepMind", "Gemini", "Demis Hassabis"], "category": "frontier_lab" },
+    { "name": "Meta", "aliases": ["Meta", "Llama", "FAIR"], "category": "frontier_lab" },
+    { "name": "xAI", "aliases": ["xAI", "Grok", "Elon Musk"], "category": "frontier_lab" },
+    { "name": "Mistral", "aliases": ["Mistral", "Mistral AI"], "category": "open_weight" },
+    { "name": "DeepSeek", "aliases": ["DeepSeek"], "category": "open_weight" },
+    { "name": "Moonshot / Kimi", "aliases": ["Moonshot", "Kimi"], "category": "open_weight" },
+    { "name": "MiniMax", "aliases": ["MiniMax"], "category": "open_weight" },
+    { "name": "Qwen", "aliases": ["Qwen", "Alibaba", "Tongyi"], "category": "open_weight" }
+  ]
+}

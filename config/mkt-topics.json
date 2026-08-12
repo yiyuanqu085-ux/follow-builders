@@ -1,0 +1,29 @@
+{
+  "_comment": "Z.ai 关注主题与关键词。用于 signal 的 topic_tags 标注和评分时的主题匹配加分。",
+  "topics": {
+    "models": {
+      "label": "Models",
+      "keywords": ["GLM", "GLM-5.2", "open-source LLM", "open-weight", "multimodal", "reasoning model", "MMLU", "benchmark", "fine-tune", "RLHF", "inference", "quantization"]
+    },
+    "coding_agents": {
+      "label": "Coding / Agents",
+      "keywords": ["coding agent", "agentic coding", "Claude Code", "Codex", "Cursor", "OpenCode", "agent framework", "MCP", "tool use", "function calling", "software engineering"]
+    },
+    "developer_ecosystem": {
+      "label": "Developer Ecosystem",
+      "keywords": ["API", "model serving", "developer tools", "open-source", "benchmark", "Hugging Face", "GitHub", "agents", "SDK", "playground"]
+    },
+    "startup": {
+      "label": "Startup",
+      "keywords": ["AI startup", "AI founder", "seed round", "Series A", "accelerator", "YC", "AI infra startup", "agent startup", "fundraise", "launch"]
+    },
+    "enterprise": {
+      "label": "Enterprise",
+      "keywords": ["enterprise AI", "private deployment", "on-prem", "sovereign AI", "AI transformation", "enterprise agents", "AI security", "AI governance", "data access", "permissions", "model evaluation", "cost optimization", "procurement"]
+    },
+    "competitors": {
+      "label": "Competitors",
+      "keywords": ["OpenAI", "Anthropic", "Google", "DeepMind", "Meta", "xAI", "Mistral", "DeepSeek", "Moonshot", "Kimi", "MiniMax", "Qwen", "GPT", "Gemini", "Llama"]
+    }
+  }
+}

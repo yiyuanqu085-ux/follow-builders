@@ -1,0 +1,13 @@
+{
+  "_comment": "Extra (non-tweet) sources for generate-mkt-feed.js. KOL tweets are fetched by generate-feed.js via X API; this file only configures arXiv papers (researcher KOLs whose real output is papers) + trending feeds (HN/GitHub/arXiv hot) that fill the Enterprise/Startup boards. source_status: arxiv | trending.",
+  "arxiv_authors": [
+    { "kol": "Thom_Wolf", "name": "Thomas Wolf", "search_query": "au:\"Thomas Wolf\"", "source_name": "arxiv.org", "lookbackDays": 30, "maxResults": 8 },
+    { "kol": "fchollet", "name": "François Chollet", "search_query": "au:\"Francois Chollet\"", "source_name": "arxiv.org", "lookbackDays": 60, "maxResults": 8 },
+    { "kol": "DrJimFan", "name": "Jim Fan (Linxi Fan)", "search_query": "au:\"Linxi Fan\"", "source_name": "arxiv.org", "lookbackDays": 30, "maxResults": 8 }
+  ],
+  "trending": {
+    "hackernews": { "enabled": true, "minPoints": 50, "lookbackHours": 24, "source_name": "news.ycombinator.com" },
+    "github_trending": { "enabled": true, "url": "https://github.com/trending?since=daily", "source_name": "github.com/trending", "lookbackHours": 24 },
+    "arxiv_trending": { "enabled": true, "categories": ["cs.CL", "cs.LG", "cs.AI"], "lookbackDays": 3, "source_name": "arxiv.org" }
+  }
+}

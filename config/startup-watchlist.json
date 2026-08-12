@@ -1,0 +1,9 @@
+{
+  "_comment": "Startup & Developer 生态关注名单。一版先空/少量,后续 MKT 侧补充。用于 Startup & Developer Ecosystem 板块匹配。",
+  "startups": [],
+  "signals_of_interest": [
+    "new AI startup", "agent startup", "AI coding startup", "AI infra startup",
+    "open-source AI project", "developer tools", "model adoption", "model switch",
+    "fundraise", "seed round", "Series A", "launch"
+  ]
+}

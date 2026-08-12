@@ -1,0 +1,37 @@
+{
+  "_comment": "MKT relevance 评分规则(大概规则,不追求跨天严格可比)。AI 按权重 + 主题匹配打分,映射到 P0-P3。",
+  "weights": {
+    "zai_product": 30,
+    "dev_ecosystem": 20,
+    "startup_gtm": 15,
+    "enterprise_gtm": 15,
+    "kol_influence": 10,
+    "freshness": 10
+  },
+  "topic_match_bonus": {
+    "_comment": "命中以下主题时给对应维度加分(0-100 尺度上的加分)",
+    "models_or_coding_agents": "+30 to zai_product",
+    "dev_ecosystem_keywords": "+20 to dev_ecosystem",
+    "startup_keywords": "+15 to startup_gtm",
+    "enterprise_keywords": "+15 to enterprise_gtm"
+  },
+  "priority_thresholds": {
+    "_comment": "总分(0-100)映射到 P0-P3",
+    "P0_must_know": { "min": 80, "desc": "重磅:GLM 新版本、竞品大动作、强相关 KOL 信号" },
+    "P1_mkt_relevant": { "min": 60, "desc": "和 Z.ai 营销相关、值得跟进" },
+    "P2_interesting": { "min": 40, "desc": "有意思但优先级低" },
+    "P3_noise": { "min": 0, "desc": "噪音,基本不收" }
+  },
+  "freshness_rules": {
+    "within_24h": "+10",
+    "within_72h": "+5",
+    "older": "+0"
+  },
+  "source_confidence": {
+    "_comment": "不同来源的置信度,影响 kol_influence 维度。X API 版只产 x / arxiv / trending 三种 source_status",
+    "x": 100,
+    "arxiv": 95,
+    "trending": 60
+  },
+  "output_rule": "最终日报主要展示 P0 / P1;P2 酌情;P3 不收。"
+}

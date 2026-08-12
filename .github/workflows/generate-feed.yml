@@ -1,21 +1,20 @@
-name: Generate Feeds
+name: Generate MKT Feed
+
+# Fork workflow: produces the fork's own X tweet feed (generate-feed.js
+# --tweets-only with X_BEARER_TOKEN) PLUS the arXiv/trending extras
+# (generate-mkt-feed.js, no secret). Podcasts/blogs are still free-ridden from
+# upstream zarazhangrui/follow-builders at digest time (prepare-digest.js).
+#
+# Requires repo secret: X_BEARER_TOKEN (X API v2 app-only bearer token,
+# per-call billing, read scope for /users/by + /users/:id/tweets).
+#
+# Timing: 22:17 UTC (≈6:17 Asia/Shanghai) so feeds are committed well before
+# the 09:30 Shanghai brief generation.
 
 on:
   schedule:
-    # All feeds (tweets, podcasts, blogs): once daily at 6:17am UTC
-    - cron: '17 6 * * *'
+    - cron: '17 22 * * *'
   workflow_dispatch:
-    inputs:
-      mode:
-        description: 'What to fetch'
-        required: false
-        default: 'all'
-        type: choice
-        options:
-          - all
-          - tweets-only
-          - podcasts-only
-          - blogs-only
 
 jobs:
   generate:
@@ -33,21 +32,18 @@ jobs:
       - name: Install dependencies
         run: cd scripts && npm install
 
-      - name: Generate feeds
+      - name: Generate X tweet feed (upstream script, own token)
         env:
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
-          POD2TXT_API_KEY: ${{ secrets.POD2TXT_API_KEY }}
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mode }}" != "all" ]; then
-            cd scripts && node generate-feed.js --${{ inputs.mode }}
-          else
-            cd scripts && node generate-feed.js
-          fi
+        run: cd scripts && node generate-feed.js --tweets-only
+
+      - name: Generate MKT extra feed (arXiv + trending, no secret)
+        run: cd scripts && node generate-mkt-feed.js
 
       - name: Commit and push feeds
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feed-x.json feed-podcasts.json feed-blogs.json state-feed.json
+          git add feed-x.json state-feed.json feed-mkt.json state-mkt-feed.json
           git diff --cached --quiet || git commit -m "chore: update feeds [skip ci]"
           git push
