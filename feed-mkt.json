@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T02:01:00.235Z",
+  "generatedAt": "2026-08-12T02:58:31.098Z",
   "signalCount": 10,
   "stats": {
     "byStatus": {
@@ -11,70 +11,10 @@
       "source_status": "trending",
       "kol": null,
       "name": "Hacker News",
-      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
-      "summary": "https://stolen-thoughts.com/",
-      "url": "https://stolen-thoughts.com/",
-      "publishedAt": "2026-08-11T13:22:00.000Z",
-      "source_name": "news.ycombinator.com",
-      "content": "",
-      "topic_tags": [
-        "Developer Ecosystem"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "Hacker News",
-      "title": "Apple Silicon and macOS VMs: Faster LLM Inference with llama.cpp",
-      "summary": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md",
-      "url": "https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md",
-      "publishedAt": "2026-08-11T14:50:33.000Z",
-      "source_name": "news.ycombinator.com",
-      "content": "",
-      "topic_tags": [
-        "Models",
-        "Developer Ecosystem",
-        "Startup",
-        "Competitors"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "Hacker News",
-      "title": "OpenAI’s head of ethics leaves less than a year after joining",
-      "summary": "https://www.ft.com/content/e49dfb75-f841-4466-a577-f7aaff8779a0",
-      "url": "https://www.ft.com/content/e49dfb75-f841-4466-a577-f7aaff8779a0",
-      "publishedAt": "2026-08-11T12:23:07.000Z",
-      "source_name": "news.ycombinator.com",
-      "content": "",
-      "topic_tags": [
-        "Competitors"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "Hacker News",
-      "title": "Go is an ideal language for AI-assisted software engineering",
-      "summary": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
-      "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
-      "publishedAt": "2026-08-11T16:57:09.000Z",
-      "source_name": "news.ycombinator.com",
-      "content": "",
-      "topic_tags": [
-        "Coding / Agents",
-        "Competitors"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "Hacker News",
-      "title": "Compression is prediction",
-      "summary": "https://ngrok.com/blog/compression-is-prediction",
-      "url": "https://ngrok.com/blog/compression-is-prediction",
-      "publishedAt": "2026-08-11T19:49:44.000Z",
+      "title": "Grok Bot",
+      "summary": "https://x.ai/bot",
+      "url": "https://x.ai/bot",
+      "publishedAt": "2026-08-11T17:23:09.000Z",
       "source_name": "news.ycombinator.com",
       "content": "",
       "topic_tags": []
@@ -82,12 +22,12 @@
     {
       "source_status": "trending",
       "kol": null,
-      "name": "GitHub Trending",
-      "title": "sponsors/vitali87",
-      "summary": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
-      "url": "https://github.com/sponsors/vitali87",
-      "publishedAt": null,
-      "source_name": "github.com/trending",
+      "name": "Hacker News",
+      "title": "What I learned by putting GitHub Copilot behind a MitM proxy",
+      "summary": "https://www.lighthousenewsletter.com/p/i-put-github-copilot-behind-a-mitm",
+      "url": "https://www.lighthousenewsletter.com/p/i-put-github-copilot-behind-a-mitm",
+      "publishedAt": "2026-08-11T10:40:47.000Z",
+      "source_name": "news.ycombinator.com",
       "content": "",
       "topic_tags": [
         "Developer Ecosystem"
@@ -96,12 +36,12 @@
     {
       "source_status": "trending",
       "kol": null,
-      "name": "GitHub Trending",
-      "title": "apps/github-actions",
-      "summary": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
-      "url": "https://github.com/apps/github-actions",
-      "publishedAt": null,
-      "source_name": "github.com/trending",
+      "name": "Hacker News",
+      "title": "WorldClaw Agentic 3D open-world generation at scale",
+      "summary": "https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/",
+      "url": "https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/",
+      "publishedAt": "2026-08-11T21:56:18.000Z",
+      "source_name": "news.ycombinator.com",
       "content": "",
       "topic_tags": [
         "Developer Ecosystem"
@@ -110,15 +50,28 @@
     {
       "source_status": "trending",
       "kol": null,
-      "name": "GitHub Trending",
-      "title": "anthropics/skills",
-      "summary": "Public repository for Agent Skills. Contribute to anthropics/skills development by creating an account on GitHub.",
-      "url": "https://github.com/anthropics/skills",
-      "publishedAt": null,
-      "source_name": "github.com/trending",
+      "name": "Hacker News",
+      "title": "Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet",
+      "summary": "https://github.com/TheRealYT/git-knife",
+      "url": "https://github.com/TheRealYT/git-knife",
+      "publishedAt": "2026-08-11T15:09:34.000Z",
+      "source_name": "news.ycombinator.com",
       "content": "",
       "topic_tags": [
-        "Developer Ecosystem",
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "Why Did OpenAI's Head of Ethics Chloé Bakalar Leave?",
+      "summary": "https://aimagazine.com/news/why-did-openai-head-of-ethics-chloe-bakalar-leave",
+      "url": "https://aimagazine.com/news/why-did-openai-head-of-ethics-chloe-bakalar-leave",
+      "publishedAt": "2026-08-11T14:03:18.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
         "Competitors"
       ]
     },
@@ -126,9 +79,9 @@
       "source_status": "trending",
       "kol": null,
       "name": "GitHub Trending",
-      "title": "3b1b/manim",
-      "summary": "Animation engine for explanatory math videos. Contribute to 3b1b/manim development by creating an account on GitHub.",
-      "url": "https://github.com/3b1b/manim",
+      "title": "paperclipai/paperclip",
+      "summary": "The open-source app everyone uses to manage agents at work - paperclipai/paperclip",
+      "url": "https://github.com/paperclipai/paperclip",
       "publishedAt": null,
       "source_name": "github.com/trending",
       "content": "",
@@ -140,22 +93,59 @@
       "source_status": "trending",
       "kol": null,
       "name": "GitHub Trending",
-      "title": "stablyai/orca",
-      "summary": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS. - stablyai/orca",
-      "url": "https://github.com/stablyai/orca",
+      "title": "huggingface/transformers",
+      "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  - GitHub - huggingface/transformers: 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+      "url": "https://github.com/huggingface/transformers",
       "publishedAt": null,
       "source_name": "github.com/trending",
       "content": "",
       "topic_tags": [
-        "Coding / Agents",
+        "Models",
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "harveyai/harvey-labs",
+      "summary": "A benchmark built to evaluate and improve agent capabilities for supporting legal work. - harveyai/harvey-labs",
+      "url": "https://github.com/harveyai/harvey-labs",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Models",
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "sponsors/jaywcjlove",
+      "summary": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
+      "url": "https://github.com/sponsors/jaywcjlove",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "sponsors/calesthio",
+      "summary": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
+      "url": "https://github.com/sponsors/calesthio",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
         "Developer Ecosystem"
       ]
     }
-  ],
-  "errors": [
-    "arxiv:Thom_Wolf: HTTP 429",
-    "arxiv:fchollet: HTTP 429",
-    "arxiv:DrJimFan: HTTP 429",
-    "trending:arxiv: HTTP 429"
   ]
 }
