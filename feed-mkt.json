@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T02:58:31.098Z",
+  "generatedAt": "2026-08-13T00:10:39.126Z",
   "signalCount": 10,
   "stats": {
     "byStatus": {
@@ -11,64 +11,10 @@
       "source_status": "trending",
       "kol": null,
       "name": "Hacker News",
-      "title": "Grok Bot",
-      "summary": "https://x.ai/bot",
-      "url": "https://x.ai/bot",
-      "publishedAt": "2026-08-11T17:23:09.000Z",
-      "source_name": "news.ycombinator.com",
-      "content": "",
-      "topic_tags": []
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "Hacker News",
-      "title": "What I learned by putting GitHub Copilot behind a MitM proxy",
-      "summary": "https://www.lighthousenewsletter.com/p/i-put-github-copilot-behind-a-mitm",
-      "url": "https://www.lighthousenewsletter.com/p/i-put-github-copilot-behind-a-mitm",
-      "publishedAt": "2026-08-11T10:40:47.000Z",
-      "source_name": "news.ycombinator.com",
-      "content": "",
-      "topic_tags": [
-        "Developer Ecosystem"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "Hacker News",
-      "title": "WorldClaw Agentic 3D open-world generation at scale",
-      "summary": "https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/",
-      "url": "https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/",
-      "publishedAt": "2026-08-11T21:56:18.000Z",
-      "source_name": "news.ycombinator.com",
-      "content": "",
-      "topic_tags": [
-        "Developer Ecosystem"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "Hacker News",
-      "title": "Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet",
-      "summary": "https://github.com/TheRealYT/git-knife",
-      "url": "https://github.com/TheRealYT/git-knife",
-      "publishedAt": "2026-08-11T15:09:34.000Z",
-      "source_name": "news.ycombinator.com",
-      "content": "",
-      "topic_tags": [
-        "Developer Ecosystem"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "Hacker News",
-      "title": "Why Did OpenAI's Head of Ethics Chloé Bakalar Leave?",
-      "summary": "https://aimagazine.com/news/why-did-openai-head-of-ethics-chloe-bakalar-leave",
-      "url": "https://aimagazine.com/news/why-did-openai-head-of-ethics-chloe-bakalar-leave",
-      "publishedAt": "2026-08-11T14:03:18.000Z",
+      "title": "DeepSeek V4 Pro 0813",
+      "summary": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
+      "publishedAt": "2026-08-12T16:04:50.000Z",
       "source_name": "news.ycombinator.com",
       "content": "",
       "topic_tags": [
@@ -78,10 +24,80 @@
     {
       "source_status": "trending",
       "kol": null,
+      "name": "Hacker News",
+      "title": "AI is removing the middle class of software engineering?",
+      "summary": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
+      "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
+      "publishedAt": "2026-08-12T13:20:05.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
+        "Coding / Agents"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "Qwen3.8-2.4T",
+      "summary": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "publishedAt": "2026-08-12T15:01:17.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
+        "Competitors"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "Controversial creators are benefiting from monetization programs run by Meta",
+      "summary": "https://www.abc.net.au/news/2026-08-06/ragebait-how-facebook-is-paying-controversial-creators/106940696",
+      "url": "https://www.abc.net.au/news/2026-08-06/ragebait-how-facebook-is-paying-controversial-creators/106940696",
+      "publishedAt": "2026-08-12T09:35:30.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
+        "Competitors"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "Hacker News",
+      "title": "2026 Eclipse Webcams",
+      "summary": "https://jonty.github.io/2026_eclipse_webcams/",
+      "url": "https://jonty.github.io/2026_eclipse_webcams/",
+      "publishedAt": "2026-08-12T11:53:01.000Z",
+      "source_name": "news.ycombinator.com",
+      "content": "",
+      "topic_tags": [
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
       "name": "GitHub Trending",
-      "title": "paperclipai/paperclip",
-      "summary": "The open-source app everyone uses to manage agents at work - paperclipai/paperclip",
-      "url": "https://github.com/paperclipai/paperclip",
+      "title": "cathrynlavery/diagram-design",
+      "summary": "29 editorial diagram types for Claude Code. Self-contained HTML + SVG. No shadows, no Mermaid-slop. - cathrynlavery/diagram-design",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Coding / Agents"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "macro-inc/macro",
+      "summary": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory. - macro-inc/macro",
+      "url": "https://github.com/macro-inc/macro",
       "publishedAt": null,
       "source_name": "github.com/trending",
       "content": "",
@@ -93,39 +109,9 @@
       "source_status": "trending",
       "kol": null,
       "name": "GitHub Trending",
-      "title": "huggingface/transformers",
-      "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  - GitHub - huggingface/transformers: 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
-      "url": "https://github.com/huggingface/transformers",
-      "publishedAt": null,
-      "source_name": "github.com/trending",
-      "content": "",
-      "topic_tags": [
-        "Models",
-        "Developer Ecosystem"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "GitHub Trending",
-      "title": "harveyai/harvey-labs",
-      "summary": "A benchmark built to evaluate and improve agent capabilities for supporting legal work. - harveyai/harvey-labs",
-      "url": "https://github.com/harveyai/harvey-labs",
-      "publishedAt": null,
-      "source_name": "github.com/trending",
-      "content": "",
-      "topic_tags": [
-        "Models",
-        "Developer Ecosystem"
-      ]
-    },
-    {
-      "source_status": "trending",
-      "kol": null,
-      "name": "GitHub Trending",
-      "title": "sponsors/jaywcjlove",
-      "summary": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
-      "url": "https://github.com/sponsors/jaywcjlove",
+      "title": "infiniflow/ragflow",
+      "summary": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs - infiniflow/ragflow",
+      "url": "https://github.com/infiniflow/ragflow",
       "publishedAt": null,
       "source_name": "github.com/trending",
       "content": "",
@@ -137,9 +123,23 @@
       "source_status": "trending",
       "kol": null,
       "name": "GitHub Trending",
-      "title": "sponsors/calesthio",
-      "summary": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
-      "url": "https://github.com/sponsors/calesthio",
+      "title": "NVIDIA-NeMo/Switchyard",
+      "summary": "Contribute to NVIDIA-NeMo/Switchyard development by creating an account on GitHub.",
+      "url": "https://github.com/NVIDIA-NeMo/Switchyard",
+      "publishedAt": null,
+      "source_name": "github.com/trending",
+      "content": "",
+      "topic_tags": [
+        "Developer Ecosystem"
+      ]
+    },
+    {
+      "source_status": "trending",
+      "kol": null,
+      "name": "GitHub Trending",
+      "title": "ZuodaoTech/everyone-can-use-english",
+      "summary": "人人都能用英语. Contribute to ZuodaoTech/everyone-can-use-english development by creating an account on GitHub.",
+      "url": "https://github.com/ZuodaoTech/everyone-can-use-english",
       "publishedAt": null,
       "source_name": "github.com/trending",
       "content": "",
