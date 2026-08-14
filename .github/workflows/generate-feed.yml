@@ -8,12 +8,12 @@ name: Generate MKT Feed
 # Requires repo secret: X_BEARER_TOKEN (X API v2 app-only bearer token,
 # per-call billing, read scope for /users/by + /users/:id/tweets).
 #
-# Timing: 22:17 UTC (≈6:17 Asia/Shanghai) so feeds are committed well before
-# the 09:30 Shanghai brief generation.
+# Schedule disabled: feed is now fetched locally at 09:00 Asia/Shanghai by the
+# Hermes no-agent job "海外 feed 抓取(本地)" (scripts/fetch-overseas-feed.sh),
+# which writes feed-x.json / feed-mkt.json directly into the brief workdir.
+# Keep workflow_dispatch for manual runs / fallback.
 
 on:
-  schedule:
-    - cron: '17 22 * * *'
   workflow_dispatch:
 
 jobs:
